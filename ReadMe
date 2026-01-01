@@ -1,0 +1,222 @@
+# Secure Chat Lite 🔒
+
+A comprehensive Android security and privacy application featuring real-time threat detection, URL analysis, and advanced monitoring capabilities powered by TensorFlow Lite machine learning.
+
+## 🌟 Features
+
+### Core Security Features
+- **Model-Powered Threat Detection**:  Integrated TensorFlow Lite model for intelligent security analysis
+- **Real-time URL Analysis**:  Automated scanning and categorization of URLs for security threats
+- **Notification Monitoring**: Track and analyze notifications for suspicious content
+- **Screen Activity Monitoring**:  Accessibility service for enhanced security awareness
+- **Biometric Authentication**: Secure access using fingerprint/face recognition
+- **Encrypted Data Storage**: Room database with security-crypto implementation
+
+### User Interface
+- **Clean**: Professional interface optimized for clarity
+- **Real-time Statistics Dashboard**: Live monitoring of security metrics
+- **Navigation Components**: Modern Android navigation with Safe Args
+- **Material Design 3**: Contemporary UI following latest design guidelines
+- **ViewBinding**: Type-safe view access throughout the app
+
+### Advanced Capabilities
+- **Foreground Services**: Continuous background monitoring
+- **Custom Profile Images**: CircleImageView integration for user avatars
+- **Coroutines Support**: Asynchronous operations for smooth performance
+- **ViewModel Architecture**:  MVVM pattern with lifecycle-aware components
+- **ProGuard Optimization**: Code obfuscation for release builds
+
+## 📋 Requirements
+
+- **Minimum SDK**: Android 7.0 (API 24)
+- **Target SDK**: Android 14 (API 35)
+- **Compile SDK**: Android 14 (API 35)
+- **Language**: Kotlin
+- **Build System**: Gradle with Kotlin DSL
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Android Studio Hedgehog or later
+- JDK 11 or higher
+- Gradle 8.x
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/HARRY5D/Secure-Chat-Lite.git
+   cd Secure-Chat-Lite
+   ```
+
+2. **Open in Android Studio**
+   - Launch Android Studio
+   - Select "Open an Existing Project"
+   - Navigate to the cloned directory
+
+3. **Build the project**
+   ```bash
+   ./gradlew build
+   ```
+
+4. **Run on device/emulator**
+   - Connect your Android device or start an emulator
+   - Click "Run" in Android Studio or use: 
+   ```bash
+   ./gradlew installDebug
+   ```
+
+## 🔧 Configuration
+
+### TensorFlow Lite Model
+The app includes a pre-trained `tinybert_quantized.tflite` model (14. 6 MB) for threat detection.  Ensure this file is present in the root directory. 
+
+### Permissions
+The app requires several permissions for full functionality:
+- **INTERNET**: Network connectivity for URL analysis
+- **BIND_NOTIFICATION_LISTENER_SERVICE**: Monitor notifications
+- **BIND_ACCESSIBILITY_SERVICE**: Screen activity monitoring
+- **PACKAGE_USAGE_STATS**: App usage tracking
+- **BIOMETRIC**: Fingerprint/face authentication
+- **FOREGROUND_SERVICE**:  Background monitoring
+
+### First Run Setup
+1. Grant required permissions when prompted
+2. Enable Notification Listener in Settings → Apps → Special Access
+3. Enable Accessibility Service for Screen Monitoring
+4. Configure biometric authentication (optional)
+
+## 📚 Project Structure
+
+```
+Secure-Chat-Lite/
+├── app/
+│   ├── src/
+│   │   └── main/
+│   │       ├── java/com/example/sgp/
+│   │       │   ├── MainActivity.kt
+│   │       │   ├── SecureChatApp.kt
+│   │       │   └── services/
+│   │       │       ├── NotificationMonitorService.kt
+│   │       │       └── ScreenMonitorService.kt
+│   │       ├── res/
+│   │       └── AndroidManifest.xml
+│   ├── build.gradle. kts
+│   └── proguard-rules.pro
+├── tinybert_quantized.tflite
+├── EMOJI_FREE_UI_IMPLEMENTATION.md
+├── URL_ANALYSIS_IMPLEMENTATION.md
+├── UI_FORMATTING_IMPROVEMENTS.md
+└── build.gradle.kts
+```
+
+## 🛠️ Tech Stack
+
+### Core Dependencies
+- **AndroidX Core KTX**:  Kotlin extensions
+- **Material Components**: UI components
+- **ConstraintLayout**:  Flexible layouts
+
+### Security & ML
+- **Security Crypto**: 1.1.0-alpha06
+- **TensorFlow Lite**: 2.14.0
+- **TensorFlow Lite Support**: 0.4.4
+
+### Data & Storage
+- **Room Database**: 2.6.1
+- **Gson**: 2.10.1 for JSON serialization
+
+### Architecture Components
+- **Navigation Component**: 2.7.7
+- **Lifecycle ViewModel**: 2.7.0
+- **LiveData**: 2.7.0
+- **Coroutines**: 1.7.3
+
+### UI Libraries
+- **CircleImageView**: 3.1.0
+- **Glide**: 4.14.2
+- **Biometric**: 1.1.0
+
+## 📖 Documentation
+
+Detailed implementation guides are available: 
+- [URL Analysis Implementation](URL_ANALYSIS_IMPLEMENTATION.md)
+- [UI Formatting Improvements](UI_FORMATTING_IMPROVEMENTS.md)
+- [URL UI Demonstration](URL_UI_DEMONSTRATION. md)
+- [Real-time Statistics Implementation](REALTIME_STATISTICS_IMPLEMENTATION. md)
+
+## 🔐 Security Features
+
+### Encryption
+- AES-256 encryption for sensitive data
+- Android Keystore integration
+- Secure SharedPreferences using EncryptedSharedPreferences
+
+### Privacy
+- Local data processing (no data sent to external servers)
+- On-device ML inference
+- User-controlled permissions
+
+### Monitoring
+- Real-time threat detection
+- URL reputation checking
+- Suspicious notification flagging
+- Screen content analysis
+
+## 🧪 Testing
+
+Run unit tests:
+```bash
+./gradlew test
+```
+
+Run instrumentation tests:
+```bash
+./gradlew connectedAndroidTest
+```
+
+## 📝 ProGuard Configuration
+
+Release builds use ProGuard for code optimization and obfuscation.  Configuration is available in `app/proguard-rules.pro`.
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## 👨‍💻 Developer
+
+**HARRY5D**
+- GitHub:  [@HARRY5D](https://github.com/HARRY5D)
+
+## 🐛 Known Issues
+
+- Accessibility service may require manual enabling on some devices
+- Notification listener requires special permissions on Android 13+
+- TensorFlow Lite model requires ~15MB of storage
+
+## 🔄 Version History
+
+- **1.0** - Initial release
+  - Core security features
+  - TensorFlow Lite integration
+  - URL analysis
+  - Real-time monitoring
+
+## 🙏 Acknowledgments
+
+- TensorFlow Lite team for ML framework
+- Android Open Source Project
+- Material Design guidelines
+- Community contributors
+
+---
+
+**⚠️ Disclaimer**: This app requires sensitive permissions for security monitoring. Use responsibly and in compliance with local laws and regulations. Always obtain proper consent before monitoring devices. 
